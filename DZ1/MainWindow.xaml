@@ -1,0 +1,33 @@
+﻿<Window x:Class="DZ1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="309.965" Width="278.726" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Grid Name="m_spInData" HorizontalAlignment="Center" Width="{Binding ActualWidth, ElementName=m_gbOutData}" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="N:" Margin="5" Grid.Column="0"/>
+            <TextBox Name="m_tbNumb" Grid.Column="1" HorizontalAlignment="Stretch" KeyUp="m_tbNumb_KeyUp"/>
+        </Grid>
+        <Border BorderThickness="1" BorderBrush="Black" Height="0.5" Width="{Binding ActualWidth, ElementName=m_gbOutData}" Margin="0,20,0,10"/>
+        <GroupBox x:Name="m_gbOutData" Width="200" Height="100" Header="Результаты" Margin="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="m_tbFact" Grid.Row="1" Text="Число n не задано" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="m_tbSumm" Grid.Row="2" Text="" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="m_bExit" Content="Выход" Width="80" Margin="0,40"/>
+    </StackPanel>
+</Window>
